@@ -2,9 +2,7 @@ Ring[] rings;
 float g_diameter;
 int currentRing;
 int numRings = 5;
-float circleSize = 2;
-
-//float rad = 0;
+float circleSize = 2;  // circle become bigger with smaller value
 
 void setup() {
   size(400, 400);
@@ -21,28 +19,21 @@ void setup() {
 }
 
 void draw() {
-//  background(50, 100);
   fill(30, 100);
-  rect(0, 0, width, height);
+  rect(0, 0, width, height);  // can't use background function to transparency
   translate(width / 2, height / 2); 
 
   noFill();
   strokeWeight(1);
-  stroke(255, 153);
-//  ellipse(0, 0, width, height);
-  
-//  println("currentRing = " + currentRing);
-  
-//  rad += 90;
+  stroke(255, 90);
+  ellipse(0, 0, width, height);
   
   for (int i = 0; i < rings.length; i++) {
-    println((i + 1) + "rd.x = " + rings[i].x);
     if (i == 0) {
       rings[i].rotate(0, 0);
     }
     else {
       rings[i].rotate(rings[i - 1].x, rings[i - 1].y);
-//      rings[i].display(rings[i - 1].x, rings[i - 1].y);
     }
     rings[i].display();
   }
