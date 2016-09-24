@@ -13,5 +13,6 @@ https://processing.org/tutorials/arrays/
 ## メモ
 クラスの使い方が少し分かった  
 始め円ごとに pushMatrix, popMatrix を使って translate していたら、第3円以降位置がずれてしまった  
--> draw 関数を回す度に (width / 2, height / 2) へ座標の中心が初期化されていたため？  
+-> <s> draw 関数を回す度に (width / 2, height / 2) へ座標の中心が初期化されていたため？</s>  
+-> 円ごとにpush・popMatrix をしていたため、円毎に座標の中心が (width / 2, height / 2) へ初期化されていたため（一つ大きい円の中心座標が利用されない状態だった）
 -> translate は draw のみ、円の中心位置は自分で足し算する方式にしたところうまくいった
